@@ -8,7 +8,7 @@
       <class name="testCases.TC008_WebTable">
         <methods>
           <include name="shutDown"/>
-          <include name="webtable"/>
+          <include name="webtableFail"/>
           <include name="Setup"/>
         </methods>
       </class> <!-- testCases.TC008_WebTable -->

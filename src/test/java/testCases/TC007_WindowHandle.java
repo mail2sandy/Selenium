@@ -26,7 +26,7 @@ public class TC007_WindowHandle extends BaseClass{
 			for(String window : windowHandle) {
 				if(window != homePage) {
 					driver.switchTo().window(window);
-					System.out.println(driver.getCurrentUrl());
+					System.out.println(driver.getCurrentUrl().contains("policy"));
 					driver.switchTo().window(homePage).close();
 					windowHandle = driver.getWindowHandles();
 					driver.switchTo().window(windowHandle.iterator().next());
