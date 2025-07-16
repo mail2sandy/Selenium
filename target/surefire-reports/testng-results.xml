@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-09T12:07:23 EDT" name="Suite" finished-at="2025-07-09T12:07:37 EDT" duration-ms="13957">
+  <suite started-at="2025-07-16T08:57:22 EDT" name="Suite" finished-at="2025-07-16T08:57:47 EDT" duration-ms="25755">
     <groups>
+      <group name="regression">
+        <method signature="TC003_LoginValidation.loginCheck()[pri:0, instance:testCases.TC003_LoginValidation@5b8dfcc1]" name="loginCheck" class="testCases.TC003_LoginValidation"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="TC001_SignUpValidation.signUpValidation()[pri:0, instance:testCases.TC001_SignUpValidation@4efbca5a]" name="signUpValidation" class="testCases.TC001_SignUpValidation"/>
+        <method signature="TC002_HomePageValidation.homePageValidation()[pri:0, instance:testCases.TC002_HomePageValidation@72967906]" name="homePageValidation" class="testCases.TC002_HomePageValidation"/>
+      </group> <!-- smoke -->
+      <group name="E2E">
+        <method signature="TC001_SignUpValidation.signUpValidation()[pri:0, instance:testCases.TC001_SignUpValidation@4efbca5a]" name="signUpValidation" class="testCases.TC001_SignUpValidation"/>
+        <method signature="TC002_HomePageValidation.homePageValidation()[pri:0, instance:testCases.TC002_HomePageValidation@72967906]" name="homePageValidation" class="testCases.TC002_HomePageValidation"/>
+        <method signature="TC003_LoginValidation.loginCheck()[pri:0, instance:testCases.TC003_LoginValidation@5b8dfcc1]" name="loginCheck" class="testCases.TC003_LoginValidation"/>
+      </group> <!-- E2E -->
     </groups>
-    <test started-at="2025-07-09T12:07:23 EDT" name="Test" finished-at="2025-07-09T12:07:37 EDT" duration-ms="13957">
-      <class name="testCases.TC008_WebTable">
-        <test-method is-config="true" signature="Setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC008_WebTable@5c33f1a9]" started-at="2025-07-09T12:07:23 EDT" name="Setup" finished-at="2025-07-09T12:07:29 EDT" duration-ms="5764" status="PASS">
+    <test started-at="2025-07-16T08:57:22 EDT" name="Test" finished-at="2025-07-16T08:57:47 EDT" duration-ms="25755">
+      <class name="testCases.TC002_HomePageValidation">
+        <test-method is-config="true" signature="Setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC002_HomePageValidation@72967906]" started-at="2025-07-16T08:57:35 EDT" name="Setup" finished-at="2025-07-16T08:57:39 EDT" duration-ms="4188" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,76 +35,67 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method signature="webtableFail()[pri:1, instance:testCases.TC008_WebTable@5c33f1a9]" started-at="2025-07-09T12:07:29 EDT" name="webtableFail" finished-at="2025-07-09T12:07:34 EDT" duration-ms="5215" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[element click intercepted: Element <input id="second" type="checkbox" value="" class="qe"> is not clickable at point (581, 670). Other element would receive the click: <iframe id="aswift_3" name="aswift_3" browsingtopics="true" style="min-height: auto; max-height: none; min-width: auto; max-width: none; width: 728px !important; height: 90px !important; display: block; margin: 0px auto;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/html/r20250708/r20190131/zrt_lookup_fy2021.html#RS-1-&amp;adk=1812271801&amp;client=ca-pub-6251538267574677&amp;fa=1&amp;ifi=4&amp;uci=a!4&amp;btvi=2" data-google-container-id="a!4" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CMPUuLGUsI4DFcZPwgUdJAYdEw"></iframe>
-  (Session info: chrome=138.0.7204.97)
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [737c8aac6d352b2793773f1522f325ac, clickElement {id=f.5A86942241C9A6594F7C5560D6AA0CA1.d.FB03BD2ADD111B1D7769F2FB72C3F479.e.5}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\Name\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54618}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54618/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[[[[[[[ChromeDriver: chrome on windows (737c8aac6d352b2793773f1522f325ac)] -> xpath: //div[@class='card']//table[@id='simpletable']//tbody]] -> xpath: .//tr]] -> xpath: .//td]] -> tag name: input]
-Session ID: 737c8aac6d352b2793773f1522f325ac]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: element click intercepted: Element <input id="second" type="checkbox" value="" class="qe"> is not clickable at point (581, 670). Other element would receive the click: <iframe id="aswift_3" name="aswift_3" browsingtopics="true" style="min-height: auto; max-height: none; min-width: auto; max-width: none; width: 728px !important; height: 90px !important; display: block; margin: 0px auto;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/html/r20250708/r20190131/zrt_lookup_fy2021.html#RS-1-&amp;adk=1812271801&amp;client=ca-pub-6251538267574677&amp;fa=1&amp;ifi=4&amp;uci=a!4&amp;btvi=2" data-google-container-id="a!4" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CMPUuLGUsI4DFcZPwgUdJAYdEw"></iframe>
-  (Session info: chrome=138.0.7204.97)
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [737c8aac6d352b2793773f1522f325ac, clickElement {id=f.5A86942241C9A6594F7C5560D6AA0CA1.d.FB03BD2ADD111B1D7769F2FB72C3F479.e.5}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.97, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\Name\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54618}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54618/devtoo..., se:cdpVersion: 138.0.7204.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[[[[[[[ChromeDriver: chrome on windows (737c8aac6d352b2793773f1522f325ac)] -> xpath: //div[@class='card']//table[@id='simpletable']//tbody]] -> xpath: .//tr]] -> xpath: .//td]] -> tag name: input]
-Session ID: 737c8aac6d352b2793773f1522f325ac
-at org.junit.Assert.fail(Assert.java:93)
-at testCases.TC008_WebTable.webtableFail(TC008_WebTable.java:56)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="homePageValidation()[pri:0, instance:testCases.TC002_HomePageValidation@72967906]" started-at="2025-07-16T08:57:39 EDT" name="homePageValidation" finished-at="2025-07-16T08:57:39 EDT" duration-ms="298" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- webtableFail -->
-        <test-method signature="webtablePass()[pri:2, instance:testCases.TC008_WebTable@5c33f1a9]" started-at="2025-07-09T12:07:34 EDT" name="webtablePass" finished-at="2025-07-09T12:07:37 EDT" duration-ms="2634" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- webtablePass -->
-        <test-method is-config="true" signature="shutDown()[pri:0, instance:testCases.TC008_WebTable@5c33f1a9]" started-at="2025-07-09T12:07:37 EDT" name="shutDown" finished-at="2025-07-09T12:07:37 EDT" duration-ms="313" status="PASS">
+        </test-method> <!-- homePageValidation -->
+        <test-method is-config="true" signature="shutDown()[pri:0, instance:testCases.TC002_HomePageValidation@72967906]" started-at="2025-07-16T08:57:39 EDT" name="shutDown" finished-at="2025-07-16T08:57:39 EDT" duration-ms="289" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shutDown -->
-      </class> <!-- testCases.TC008_WebTable -->
+      </class> <!-- testCases.TC002_HomePageValidation -->
+      <class name="testCases.TC001_SignUpValidation">
+        <test-method is-config="true" signature="Setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC001_SignUpValidation@4efbca5a]" started-at="2025-07-16T08:57:22 EDT" name="Setup" finished-at="2025-07-16T08:57:31 EDT" duration-ms="9039" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Windows]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method signature="signUpValidation()[pri:0, instance:testCases.TC001_SignUpValidation@4efbca5a]" started-at="2025-07-16T08:57:31 EDT" name="signUpValidation" finished-at="2025-07-16T08:57:34 EDT" duration-ms="3484" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signUpValidation -->
+        <test-method is-config="true" signature="shutDown()[pri:0, instance:testCases.TC001_SignUpValidation@4efbca5a]" started-at="2025-07-16T08:57:34 EDT" name="shutDown" finished-at="2025-07-16T08:57:35 EDT" duration-ms="348" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shutDown -->
+      </class> <!-- testCases.TC001_SignUpValidation -->
+      <class name="testCases.TC003_LoginValidation">
+        <test-method is-config="true" signature="Setup(java.lang.String,java.lang.String)[pri:0, instance:testCases.TC003_LoginValidation@5b8dfcc1]" started-at="2025-07-16T08:57:39 EDT" name="Setup" finished-at="2025-07-16T08:57:44 EDT" duration-ms="4237" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Windows]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method signature="loginCheck()[pri:0, instance:testCases.TC003_LoginValidation@5b8dfcc1]" started-at="2025-07-16T08:57:44 EDT" name="loginCheck" finished-at="2025-07-16T08:57:47 EDT" duration-ms="3524" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginCheck -->
+        <test-method is-config="true" signature="shutDown()[pri:0, instance:testCases.TC003_LoginValidation@5b8dfcc1]" started-at="2025-07-16T08:57:47 EDT" name="shutDown" finished-at="2025-07-16T08:57:47 EDT" duration-ms="289" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shutDown -->
+      </class> <!-- testCases.TC003_LoginValidation -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

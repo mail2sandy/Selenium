@@ -7,7 +7,7 @@ import pageObjects.HomePageBeforeLogin;
 
 public class TC002_HomePageValidation extends BaseClass{
 
-	@Test
+	@Test (groups={"smoke", "E2E"})
 	public void homePageValidation() {
 		log.info("**************TC002_HomePageValidation Started**************");
 

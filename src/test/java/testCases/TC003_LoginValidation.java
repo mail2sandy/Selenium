@@ -10,7 +10,7 @@ import pageObjects.SignUpPage;
 
 public class TC003_LoginValidation extends BaseClass{
 	
-	@Test
+	@Test(groups={"regression", "E2E"})
 	public void loginCheck() {
 		log.info("************************TC003_loginValidation Started*********************");
 		

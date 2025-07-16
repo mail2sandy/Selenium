@@ -13,7 +13,7 @@ import pageObjects.SignUpPage;
 public class TC001_SignUpValidation extends BaseClass{
 	
 	@SuppressWarnings("deprecation")
-	@Test
+	@Test (groups = {"smoke", "E2E"})
 	public void signUpValidation() {
 		log.info("**************TC001_SignUpValidation Started**************");
 		Faker fackData = new Faker();
@@ -28,7 +28,8 @@ public class TC001_SignUpValidation extends BaseClass{
 		log.info("submit sucessfully selected");
 		log.debug("Sucess");
 		RegistrationPage RP = new RegistrationPage(driver);
-		Assert.assertEquals( RP.registrationPageConfirmation().trim(),"ENTER ACCOUNT INFORMATION");
+		String response = RP.registrationPageConfirmation().trim();
+		Assert.assertEquals( response,"ENTER ACCOUNT INFORMATION");
 		log.info("**************TC001_SignUpValidation Ended**************");
 
 	}

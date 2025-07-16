@@ -29,9 +29,6 @@ public class SignUpPage extends BasePage {
 	}
 	
 	public void userName(String userName) {
-		if(logOut.isDisplayed()) {
-			logOut.click();
-		}
 		txtUserName.sendKeys(userName);
 	}
 	

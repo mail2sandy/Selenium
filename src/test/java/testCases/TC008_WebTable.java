@@ -5,15 +5,27 @@ import java.util.List;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class TC008_WebTable extends BaseClass {
+public class TC008_WebTable {
 	
 	String url = "https://letcode.in/table";
+	private WebDriver driver;
 	
-	@Test(priority=1)
+	@BeforeClass
+	@Parameters("browser")
+	public void setup(String browser) {
+		
+		driver = WebdriverSingleton.getInstance(browser).getDriver();
+	}
+	
+	@Test(priority=1, groups= {"regression","E2E"})
 	public void webtableFail() throws Exception {
 		
 		driver.get(url);
@@ -100,6 +112,17 @@ System.out.println(allRows.size());
 			Assert.fail(e.getMessage());
 		}
 		
+	}
+	
+	@Test(priority=3, dependsOnMethods={"webtableFail"})
+	public void dummy() {
+		Assert.assertTrue(true);
+	}
+	
+	@AfterClass
+	public void tearDown() {
+		
+		WebdriverSingleton.quitBrowser();
 	}
 
 }

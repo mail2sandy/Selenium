@@ -3,11 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.ReadXmlData">
+      <class name="testCases.TC008_WebTable">
         <methods>
-          <include name="readFromXml"/>
+          <include name="dummy"/>
+          <include name="webtableFail"/>
+          <include name="setup"/>
+          <include name="webtablePass"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- testCases.ReadXmlData -->
+      </class> <!-- testCases.TC008_WebTable -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

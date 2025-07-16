@@ -10,7 +10,7 @@ import utilities.DataProviders;
 
 public class TC004_LoginDDTc extends BaseClass{
 	
-	@Test (dataProvider="loginData", dataProviderClass=DataProviders.class)
+	@Test (dataProvider="loginData", dataProviderClass=DataProviders.class, groups={"dataDriven", "E2E"})
 	public void logincheck(String userId, String password, String type){
 		log.info("*****************TC004_LoginDDTc Started*********************");
 		try {
