@@ -16,6 +16,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -23,15 +24,30 @@ import org.testng.TestListenerAdapter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
+import org.openqa.selenium.devtools.*;
+
 
 public class BaseClass {
 	public Logger log;
-	public static WebDriver driver;
+	WebDriver driver;
+    private static ChromeDriver chromeDriver;
 	public Properties prop;
+	private static ThreadLocal <WebDriver> tdriver = new ThreadLocal<>();
+    private static DevTools chromeDevTools;
+
+	
+	public void setDriver(WebDriver driver) {
+		tdriver.set(driver);
+		}
+	
+	public WebDriver getDriver() {
+		return tdriver.get();
+	}
 
 	@BeforeClass (groups = {"smoke", "regression", "E2E", "dataDriven"})
 	@Parameters({"os", "browser"})
 	public void Setup(String os, String browser) throws IOException, InterruptedException {
+		
 		log = LogManager.getLogger(this.getClass());
 		FileReader file = new FileReader("./src//test//resources//config.properties");
 		prop = new Properties();
@@ -40,16 +56,25 @@ public class BaseClass {
 		
 		
 		switch(browser.toLowerCase()) {
-		case "chrome" : driver= new ChromeDriver(); break;
-		case "edge" : driver= new EdgeDriver(); break;
+		case "chrome" : chromeDriver= new ChromeDriver(); 
+						chromeDevTools = chromeDriver.getDevTools();
+				        chromeDevTools.createSession();
+						setDriver(chromeDriver);
+						break;
+		case "edge" : driver= new EdgeDriver();setDriver(driver); break;
 		case "default" : log.error("Invalid Browser Name"); return;
 		}
-		Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		driver.manage().deleteAllCookies();
+		Wait<WebDriver> wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+		WebDriverWait wait2 = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+
+		// Wait until the login button is visible
+
+		getDriver().manage().deleteAllCookies();
 		log.info(prop.getProperty("appUrl"));
-		driver.get("https://www.automationexercise.com/");
-		driver.manage().window().maximize();
+		getDriver().get("https://www.automationexercise.com/");
+		getDriver().manage().window().maximize();
 		log.info("Page launched sucessfully in " + browser);
+		System.out.println("Page launched sucessfully in " + getDriver().getTitle());
 		
 	}
 	
@@ -57,7 +82,7 @@ public class BaseClass {
 		
 		String timeStamp = new SimpleDateFormat("yyyyddmmss").format(new Date());
 		
-		File sourceFile = ((TakesScreenshot) this.driver).getScreenshotAs(OutputType.FILE);
+		File sourceFile = ((TakesScreenshot) this.getDriver()).getScreenshotAs(OutputType.FILE);
 
 		String path = System.getProperty("user.dir")+"//screenshots//"+name+timeStamp+".png";
 		
@@ -71,7 +96,8 @@ public class BaseClass {
 	
 	@AfterClass(groups = {"smoke", "regression", "E2E", "dataDriven"})
 	public void shutDown() {
-		driver.quit();
+		getDriver().quit();
+		tdriver.remove();
 	}
 	
 

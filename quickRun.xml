@@ -8,48 +8,8 @@
   	<parameter name="os" value="Windows"/>
   	<parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.TC008_WebTable"/>
+      <class name="testCases.TC015_MouseAction"/>
     </classes>
 
-  </test> <!-- Test -->
-  <test name="edge">
-  	<parameter name="os" value="Windows"/>
-  	<parameter name="browser" value="edge"/>
-    <classes>
-      <class name="testCases.TC008_WebTable"/>
-    </classes>
-
-  </test> <!-- Test -->
-  <test name="chrome1" >
-  	<parameter name="os" value="Windows"/>
-  	<parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="testCases.TC008_WebTable"/>
-    </classes>
-
-  </test> <!-- Test -->
-  <test name="edge1">
-  	<parameter name="os" value="Windows"/>
-  	<parameter name="browser" value="edge"/>
-    <classes>
-      <class name="testCases.TC008_WebTable"/>
-    </classes>
-
-  </test> <!-- Test -->
-  <test name="chrome2" >
-  	<parameter name="os" value="Windows"/>
-  	<parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="testCases.TC008_WebTable"/>
-    </classes>
-
-  </test> <!-- Test -->
-  <test name="edge2">
-  	<parameter name="os" value="Windows"/>
-  	<parameter name="browser" value="edge"/>
-    <classes>
-      <class name="testCases.TC008_WebTable"/>
-    </classes>
-
-  </test> <!-- Test -->
+   </test> <!-- Test -->
 </suite> <!-- Suite -->
