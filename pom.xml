@@ -17,6 +17,14 @@
           </suiteXmlFiles>
         </configuration>
       </plugin>
+      
+      <plugin>
+            
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>3.2.0</version>
+            
+            </plugin>
             </plugins>
         </pluginManagement>
     </build>
@@ -87,13 +95,6 @@
     <version>5.1.2</version>
 </dependency>
 
-<!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
-<dependency>
-    <groupId>com.github.javafaker</groupId>
-    <artifactId>javafaker</artifactId>
-    <version>1.0.2</version>
-</dependency>
-
 <dependency>
                               <groupId>org.json</groupId>
                               <artifactId>json</artifactId>
@@ -134,10 +135,4 @@
 
   </dependencies>
   
-  <pluginRepositories>
-   <pluginRepository> 
-    <id>maven2</id> 
-    <url>https://repo.maven.apache.org/maven2/</url> 
-  </pluginRepository> 
-</pluginRepositories>
 </project>
