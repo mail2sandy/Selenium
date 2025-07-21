@@ -15,21 +15,21 @@ public class TC007_WindowHandle extends BaseClass{
 	public void windowHandle() {
 		
 		try {
-			driver.navigate().to(loginURL);
+			getDriver().navigate().to(loginURL);
 			Thread.sleep(5);
 			String homePage = driver.getWindowHandle();
 			System.out.println(driver.getCurrentUrl());
-			driver.findElement(By.xpath("//div[@class='links']//nav[contains(@class,'nav-links')]//div[@class='nav-item']//a[@class='nav-link external']")).click();
+			getDriver().findElement(By.xpath("//div[@class='links']//nav[contains(@class,'nav-links')]//div[@class='nav-item']//a[@class='nav-link external']")).click();
 			Thread.sleep(5);			
 			Set<String> windowHandle = driver.getWindowHandles();
 			
 			for(String window : windowHandle) {
 				if(window != homePage) {
-					driver.switchTo().window(window);
+					getDriver().switchTo().window(window);
 					System.out.println(driver.getCurrentUrl().contains("policy"));
-					driver.switchTo().window(homePage).close();
+					getDriver().switchTo().window(homePage).close();
 					windowHandle = driver.getWindowHandles();
-					driver.switchTo().window(windowHandle.iterator().next());
+					getDriver().switchTo().window(windowHandle.iterator().next());
 					System.out.println(driver.getCurrentUrl());
 					break;
 				}

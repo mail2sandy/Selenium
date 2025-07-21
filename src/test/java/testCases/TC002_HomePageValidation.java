@@ -11,7 +11,7 @@ public class TC002_HomePageValidation extends BaseClass{
 	public void homePageValidation() {
 		log.info("**************TC002_HomePageValidation Started**************");
 
-		HomePageBeforeLogin HP = new HomePageBeforeLogin(driver);
+		HomePageBeforeLogin HP = new HomePageBeforeLogin(getDriver());
 		Assert.assertEquals(true, HP.homeLinkExistCheck());
 		Assert.assertEquals(true, HP.productLinkExistCheck());
 		log.info("**************TC002_HomePageValidation Ended**************");

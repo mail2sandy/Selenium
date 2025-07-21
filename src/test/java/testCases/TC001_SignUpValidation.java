@@ -18,7 +18,7 @@ public class TC001_SignUpValidation extends BaseClass{
 		log.info("**************TC001_SignUpValidation Started**************");
 		Faker fackData = new Faker();
 		
-		SignUpPage SUP = new SignUpPage(driver);
+		SignUpPage SUP = new SignUpPage(getDriver());
 		SUP.signUplinkClick();
 		log.info("signUplinkClick sucessfully selected");
 //		SUP.userName(RandomStringUtils.randomAlphabetic(5));
@@ -27,7 +27,7 @@ public class TC001_SignUpValidation extends BaseClass{
 		SUP.submit();
 		log.info("submit sucessfully selected");
 		log.debug("Sucess");
-		RegistrationPage RP = new RegistrationPage(driver);
+		RegistrationPage RP = new RegistrationPage(getDriver());
 		String response = RP.registrationPageConfirmation().trim();
 		Assert.assertEquals( response,"ENTER ACCOUNT INFORMATION");
 		log.info("**************TC001_SignUpValidation Ended**************");

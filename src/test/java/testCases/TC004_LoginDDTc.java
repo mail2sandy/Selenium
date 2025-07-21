@@ -16,13 +16,13 @@ public class TC004_LoginDDTc extends BaseClass{
 		try {
 		
 		
-		SignUpPage SUP = new SignUpPage(driver);
+		SignUpPage SUP = new SignUpPage(getDriver());
 		SUP.signUplinkClick();
 		SUP.loginEmail(userId);
 		SUP.loginPassword(password);
 		SUP.signIn();
 		
-		HomePageAfterLogin HPAL = new HomePageAfterLogin(driver);
+		HomePageAfterLogin HPAL = new HomePageAfterLogin(getDriver());
 		Boolean test = HPAL.logOutLinkExistCheck();
 		
 		if(type.equalsIgnoreCase("valid")) {
